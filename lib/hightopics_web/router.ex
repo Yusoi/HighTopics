@@ -20,6 +20,8 @@ defmodule HightopicsWeb.Router do
     #application resources
     resources "/topics", TopicController
     resources "/users", UserController
+    resources "/themes", ThemeController
+    resources "/comments", CommentController
   end
 
   # Other scopes may use custom stacks.

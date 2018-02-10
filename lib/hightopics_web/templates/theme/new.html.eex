@@ -1,0 +1,5 @@
+<h2>New Theme</h2>
+
+<%= render "form.html", Map.put(assigns, :action, theme_path(@conn, :create)) %>
+
+<span><%= link "Back", to: theme_path(@conn, :index) %></span>

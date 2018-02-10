@@ -8,6 +8,8 @@ defmodule Hightopics.Topics.Topic do
     field :description, :string
     field :name, :string
     field :rating, :integer
+    many_to_many :themes, Theme, join_through: "themes_topics"
+    belongs_to :user, User
 
     timestamps()
   end
