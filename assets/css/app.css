@@ -11,9 +11,17 @@ body{
     background-color:#7188ED!important;
     letter-spacing: 5px;
     width:100%!important;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
-ul{
+nav ul{
     text-align:center !important;
     position:fixed; 
     width:100% !important;
@@ -26,6 +34,16 @@ li{
     display:inline !important;
     text-align:center;
 }
+
+nav select {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    nav ul     { display: none; }
+    nav select { display: inline-block; }
+}
+  
 
 .lbuttons-ht1{
     
@@ -42,7 +60,7 @@ li{
     text-decoration:none;
 }
 
-.lbuttons-ht1:hover{
+.lbuttons-ht1:hover, .lbuttons-ht1:link, .lbuttons-ht1:active{
     color:#1D2F3A;
     text-decoration:none;
     border-bottom-width:5px!important;
@@ -62,7 +80,7 @@ li{
     text-decoration:none;
 }
 
-.lbuttons-ht:hover{
+.lbuttons-ht:hover, .lbuttons-ht:link, .lbuttons-ht:active{
     color:#1D2F3A;
     text-decoration:none;
     border-bottom-width:5px!important;
@@ -78,8 +96,31 @@ li{
     z-index:20;
 }
 
-.container{
-    padding-top:140px!important;
+.navfake{
+    height:75px;
+    margin:0px;
+    padding:0px;
+}
+
+.model{
+    width:100%;
+    padding:50px;
+    float:top !important;
+}
+
+.randombutton{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: red;
+    margin:0!important;
+    float:left;
     margin:auto;
 }
 
+.maintext{
+    padding:auto;
+    width:60%;
+    float:left;
+    text-align: centered;
+}

@@ -15,14 +15,29 @@
 
   <body>
     
+    <nav>
     <ul class="navbar-ht">
       <li><a href="/" class="lbuttons-ht1">High Topics</a></li>
+      <li><a href="/" class="lbuttons-ht">Register</a></li>
       <li><a href="/" class="lbuttons-ht">Login</a></li>
-      <li><a href="/Topic" class="lbuttons-ht">Themes</a></li>
+      <li><a href="/topics" class="lbuttons-ht">Themes</a></li>
       <li><a href="/" class="lbuttons-ht">Home</a></li>      
     </ul>
+
+    <select class="navbar-ht"> 
+      <option value="" selected="selected">Select</option> 
+
+      <option value="/" class="lbuttons-ht1">High Topics</option>
+      <option value="/" class="lbuttons-ht">Home</option> 
+      <option value="/topics" class="lbuttons-ht">Themes</option>
+      <option value="/" class="lbuttons-ht">Login</option>
+      <option value="/" class="lbuttons-ht">Register</option>
+    </select>
+    </nav>
     
-    <div class="container">
+    <div class="navfake"></div>
+
+    <div class="model">
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
