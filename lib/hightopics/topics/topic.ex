@@ -8,6 +8,8 @@ defmodule Hightopics.Topics.Topic do
     field :description, :string
     field :name, :string
     field :rating, :integer
+    belongs_to :user, User
+    many_to_many :tags, Topics
 
     timestamps()
   end
