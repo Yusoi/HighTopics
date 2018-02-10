@@ -19,6 +19,7 @@ defmodule HightopicsWeb.Router do
     get "/", PageController, :index
     #application resources
     resources "/topics", TopicController
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
