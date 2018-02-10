@@ -106,21 +106,47 @@ nav select {
     width:100%;
     padding:50px;
     float:top !important;
+    text-align:center;
 }
 
 .randombutton{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: red;
-    margin:0!important;
-    float:left;
-    margin:auto;
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #FAFAFA;
+        background-color: #1D3E59;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #051726;
+        margin: 30px;
 }
 
-.maintext{
-    padding:auto;
-    width:60%;
-    float:left;
+.randombutton:hover {
+    background-color: #1D3E59;
+    box-shadow: 0 5px #051726;
+    transform: translateY(4px);
+    
+}
+
+.texth{
+    margin-top:100px!important;
+    margin-bottom:100px!important;
+    width:auto;
     text-align: centered;
+    color:#FAFAFA;
+    font-size:60px!important;
+    font-weight: 700;
+}
+
+.header2{
+    padding:auto;
+    width:auto;
+    text-align: centered;
+    color:#FAFAFA;
+    font-size:40px;
+    font-weight: 700;
 }

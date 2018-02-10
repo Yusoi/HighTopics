@@ -1,0 +1,9 @@
+<div class="texth">
+    <h>The best web app to let you do something</h>
+    <h2>It let's you choose something!!!</h2>
+</div>
+
+<div class="buttons">
+    <button class="randombutton">Random Topic</button>
+    <button class="randombutton">Random Topic (Chosen Theme)</button>
+</div>
