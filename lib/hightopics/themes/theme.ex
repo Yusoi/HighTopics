@@ -7,7 +7,7 @@ defmodule Hightopics.Themes.Theme do
   schema "themes" do
     field :description, :string
     field :name, :string
-    many_to_many :topics , Post, join_through: "themes_topics"
+    many_to_many :topics , Hightopics.Topics.Topic, join_through: "themes_topics"
 
     timestamps()
   end

@@ -8,8 +8,8 @@ defmodule Hightopics.Comments.Comment do
     field :content, :string
     field :rating, :integer
 
-    belongs_to :user, User
-    belongs_to :topic , Topic
+    belongs_to :user, Hightopics.Users.User
+    belongs_to :topic , Hightopics.Topics.Topic
 
     timestamps()
   end

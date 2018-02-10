@@ -7,7 +7,7 @@ defmodule Hightopics.Users.User do
   schema "users" do
     field :email, :string
     field :username, :string
-    has_many :topics, Topic
+    has_many :topics, Hightopics.Topics.Topic
 
     timestamps()
   end

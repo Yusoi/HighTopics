@@ -9,3 +9,13 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+
+#Themes
+Alias Hightopics.Themes.Theme
+Alias Hightopics.Topics.Topics
+Alias Hightopics.Users.User
+Alias Hightopics.Comments.Comment
+Repo.delete_all(Theme)
+
+
