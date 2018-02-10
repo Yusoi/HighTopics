@@ -9,21 +9,20 @@
 
     <title>Hello Hightopics!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:500,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
   </head>
 
   <body>
+    
+    <ul class="navbar-ht">
+      <li><a href="/" class="lbuttons-ht1">High Topics</a></li>
+      <li><a href="/" class="lbuttons-ht">Login</a></li>
+      <li><a href="/Topic" class="lbuttons-ht">Themes</a></li>
+      <li><a href="/" class="lbuttons-ht">Home</a></li>      
+    </ul>
+    
     <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
-
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
