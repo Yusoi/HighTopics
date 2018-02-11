@@ -174,8 +174,14 @@ nav select {
 
 .titleGroup{
     font-size: 40px;
-    color:#FAFAFA; 
+    color:#1D3E59; 
     font-weight: 700;
+    padding: 25px;
+    margin:auto;
+    width:auto;
+    border: 5px solid #1D3E59;
+    border-radius:25px;
+    background:#FAFAFA;
 }
 
 .tableAttributes{
@@ -187,4 +193,26 @@ nav select {
     font-size: 15px;
     color:#FAFAFA;
     text-align:left;
+}
+
+.description{
+    font-size: 20px !important; 
+    color:#1D3E59; 
+    margin-top:40px!important;
+    margin-bottom:40px!important;
+    margin:80px;
+    width:auto;
+    padding: 10px;
+    border: 5px solid #1D3E59;
+    border-radius:25px;
+    background:#FAFAFA;
+}
+.comments{
+    margin:20px;
+    color:#1D3E59; 
+    width:auto;
+    padding: 10px;
+    border: 5px solid #1D3E59;
+    background:#FAFAFA;
+    font-size: 15px;
 }
