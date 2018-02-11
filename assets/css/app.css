@@ -185,8 +185,8 @@ nav select {
 }
 
 .tableAttributes{
-    font-size: 25px;
-    color:#FAFAFA;
+    font-size: 25px!important;
+    color:#1D3E59!important;
 }
 
 .tableElements{
