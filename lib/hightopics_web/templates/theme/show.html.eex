@@ -1,4 +1,4 @@
-<h2>Show Theme</h2>
+<h2 class="titleGroup"><%=@theme.name%></h2>
 
 <ul>
 

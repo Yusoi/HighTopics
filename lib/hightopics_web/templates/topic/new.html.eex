@@ -1,4 +1,4 @@
-<h2>New Topic</h2>
+<h2 class="titleGroup">New Topic</h2>
 
 <%= render "form.html", Map.put(assigns, :action, topic_path(@conn, :create)) %>
 

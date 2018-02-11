@@ -1,4 +1,4 @@
-<h2>New Theme</h2>
+<h2 class="titleGroup">New Theme</h2>
 
 <%= render "form.html", Map.put(assigns, :action, theme_path(@conn, :create)) %>
 

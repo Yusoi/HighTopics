@@ -4,8 +4,8 @@
 </div>
 
 <div class="buttons">
-    <button class="randombutton">Random Topic</button>
-    <button class="randombutton">Random Topic (Chosen Theme)</button>
+    <%= link "Random Topic", to: topic_path(@conn, :show, Hightopics.Themes.random), class: "randombutton"%>
+    <%= link "Random Topic (Chosen Theme)", to: theme_path(@conn, :show, Hightopics.Themes.random), class: "randombutton"%>
 </div>
 
 <div class="buttons">

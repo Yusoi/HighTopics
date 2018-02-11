@@ -1,28 +1,10 @@
 <h2 class="titleGroup">Themes</h2>
 
-<table class="table">
-  <thead>
-    <tr class="tableAttributes">
-      <th>Name</th>
+<div style="float:left;">
+  <%= for theme <- @themes do %>
+    <%= link theme.name ,to: theme_path(@conn, :show, theme), class: "randombutton"%>
+  <% end %>
+</div>
 
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for theme <- @themes do %>
-    <tr class="tableElements">
-      <td style="font-size:20px;"><%= theme.name %></td>
-
-
-      <td class="text-right">
-        <span><%= link "->", to: theme_path(@conn, :show, theme), class: "btn btn-default btn-xs" %></span>
-        <!--<span><%= link "Edit", to: theme_path(@conn, :edit, theme), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: theme_path(@conn, :delete, theme), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-        -->
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
 

@@ -43,7 +43,7 @@ defmodule Hightopics.Themes do
 
       iex> create_theme(%{field: value})
       {:ok, %Theme{}}
-
+class="titleGroup"><%=@theme.name%>
       iex> create_theme(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 

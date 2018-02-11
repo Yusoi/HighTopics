@@ -123,5 +123,4 @@ defmodule Hightopics.Topics do
       |> Ecto.Changeset.put_assoc(:comments, comments)
       |> Repo.update
   end
-
 end
