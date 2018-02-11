@@ -18,9 +18,9 @@ alias Hightopics.Topics
 alias Hightopics.Topics.Topic
 alias Hightopics.Users
 alias Hightopics.Users.User
-alias Hightopics.Comments
-alias Hightopics.Comments.Comment
-alias Ecto.Changeset
+#alias Hightopics.Comments
+#alias Hightopics.Comments.Comment
+#alias Ecto.Changeset
 
 Repo.delete_all(Theme)
 
@@ -78,6 +78,8 @@ for a <- Repo.all(Topic) do
     Populate.link_topic_and_theme(a,b)
   end
 end
+
+#IO.puts Themes.random.name
 
 #for a <- Repo.all(Topic) do
 #  x = Repo.preload(a, :themes)

@@ -102,13 +102,12 @@ defmodule Hightopics.Themes do
     Theme.changeset(theme, %{})
   end
 
-  def set_theme(topic) do
-    for u <- list_themes() do
-      u
-      |> Repo.preload(:topics)
-      |> Changeset.change
-      |> Changeset.put_assoc(:topics,[topic])
-      |> Repo.update!
-end
-    end
+  def random do
+    theme = Enum.random(Repo.preload(list_themes(), :topics))
+    Enum.random(theme.topics)
+  end
+
+  def random_topic(theme) do
+   Repo.preload(Enum.random(Repo.preload(theme,:topics).topics), :themes)
+  end
 end
