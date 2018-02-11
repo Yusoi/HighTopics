@@ -5,8 +5,9 @@ defmodule Hightopics.Topics do
 
   import Ecto.Query, warn: false
   alias Hightopics.Repo
-  alias Hightopics.Themes.Theme
   alias Hightopics.Topics.Topic
+  alias Hightopics.Comments.Comment
+  alias Hightopics.Themes.Theme
 
   @doc """
   Returns the list of topics.  ## Examples
@@ -109,6 +110,17 @@ defmodule Hightopics.Topics do
       topic
       |> Ecto.Changeset.change
       |> Ecto.Changeset.put_assoc(:themes, themes)
+      |> Repo.update
+  end
+
+  def link_topic_and_comment(topic = %Topic{}, comment = %Comment{}) do
+      topic = Repo.preload(topic, :comments)
+      comments = topic.comments ++ [comment]
+                  |> Enum.map(&Ecto.Changeset.change/1)
+
+      topic
+      |> Ecto.Changeset.change
+      |> Ecto.Changeset.put_assoc(:comments, comments)
       |> Repo.update
   end
 

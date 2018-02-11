@@ -47,17 +47,6 @@ defmodule Populate do
   defp list_to_map(list) do
     Enum.into(list, %{})
   end
-
-  def link_topic_and_theme(topic = %Topic{}, theme = %Theme{}) do
-      topic = Repo.preload(topic, :themes)
-      themes = topic.themes ++ [theme]
-                  |> Enum.map(&Ecto.Changeset.change/1)
-
-      topic
-      |> Ecto.Changeset.change
-      |> Ecto.Changeset.put_assoc(:themes, themes)
-      |> Repo.update
-  end
 end
 
 Repo.delete_all(User)
@@ -75,7 +64,7 @@ Populate.add_theme! name: "Filme", description: "É um produto audiovisual final
 
 for a <- Repo.all(Topic) do
   for b <- Repo.all(Theme) do
-    Populate.link_topic_and_theme(a,b)
+    Topics.link_topic_and_theme(a,b)
   end
 end
 

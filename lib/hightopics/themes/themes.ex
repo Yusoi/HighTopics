@@ -5,7 +5,6 @@ defmodule Hightopics.Themes do
 
   import Ecto.Query, warn: false
   alias Hightopics.Repo
-
   alias Hightopics.Themes.Theme
 
   @doc """
