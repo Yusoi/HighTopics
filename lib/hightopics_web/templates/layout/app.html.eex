@@ -18,8 +18,8 @@
     <nav>
     <ul class="navbar-ht">
       <li><a href="/" class="lbuttons-ht1">High Topics</a></li>
-      <li><a href="/login" class="lbuttons-ht">Login</a></li>
-      <li><a href="/statistics" class="lbuttons-ht">Statistics</a></li>
+      <!--<li><a href="/login" class="lbuttons-ht">Login</a></li>
+      <li><a href="/statistics" class="lbuttons-ht">Statistics</a></li>-->
       <li><a href="/topics" class="lbuttons-ht">Topics</a></li>
       <li><a href="/themes" class="lbuttons-ht">Themes</a></li>     
     </ul>
@@ -30,8 +30,8 @@
       <option value="/" class="lbuttons-ht1">High Topics</option>
       <option value="/themes" class="lbuttons-ht">Themes</option>
       <li><a href="/topics" class="lbuttons-ht">Topics</a></li>
-      <li><a href="/statistics" class="lbuttons-ht">Statistics</a></li>
-      <option value="/login" class="lbuttons-ht">Login</option>
+      <!--<li><a href="/statistics" class="lbuttons-ht">Statistics</a></li>
+      <option value="/login" class="lbuttons-ht">Login</option>-->
     </select>
     </nav>
     

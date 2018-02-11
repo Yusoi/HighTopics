@@ -8,6 +8,7 @@ defmodule Hightopics.Users.User do
     field :email, :string
     field :username, :string
     has_many :topics, Hightopics.Topics.Topic
+    has_many :comments, Hightopics.Comments.Comment
 
     timestamps()
   end

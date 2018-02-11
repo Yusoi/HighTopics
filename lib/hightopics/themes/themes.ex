@@ -103,10 +103,11 @@ class="titleGroup"><%=@theme.name%>
 
   def random do
     theme = Enum.random(Repo.preload(list_themes(), :topics))
-    Enum.random(theme.topics)
+    Repo.preload(Enum.random(theme.topics),:comments)
   end
 
   def random_topic(theme) do
-   Repo.preload(Enum.random(Repo.preload(theme,:topics).topics), :themes)
+   Repo.preload(Repo.preload(Enum.random(Repo.preload(theme,:topics).topics), :themes),:comments)
+   
   end
 end

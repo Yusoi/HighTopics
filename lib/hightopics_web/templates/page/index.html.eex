@@ -5,7 +5,7 @@
 
 <div class="buttons">
     <%= link "Random Topic", to: topic_path(@conn, :show, Hightopics.Themes.random), class: "randombutton"%>
-    <%= link "Random Topic (Chosen Theme)", to: theme_path(@conn, :show, Hightopics.Themes.random), class: "randombutton"%>
+    
 </div>
 
 <div class="buttons">

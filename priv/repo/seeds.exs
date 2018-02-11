@@ -18,8 +18,7 @@ alias Hightopics.Topics
 alias Hightopics.Topics.Topic
 alias Hightopics.Users
 alias Hightopics.Users.User
-#alias Hightopics.Comments
-#alias Hightopics.Comments.Comment
+alias Hightopics.Comments.Comment
 #alias Ecto.Changeset
 
 Repo.delete_all(Theme)
@@ -41,7 +40,7 @@ defmodule Populate do
   end
 
   def add_comment!(list) do
-    Comments.create_comment list_to_map list
+    Comments.create_comment (list_to_map list)
   end
 
   defp list_to_map(list) do
@@ -61,6 +60,12 @@ Repo.delete_all(Theme)
 Populate.add_theme! name: "Musica", description: "A música é uma forma de arte que se constitui na combinação de vários sons e ritmos, seguindo uma pré-organização ao longo do tempo."
 Populate.add_theme! name: "Filme", description: "É um produto audiovisual finalizado, com uma certa duração, para ser exibido no cinema, na televisão ou em algum outro veículo"
 
+
+
+
+Populate.add_comment!(content: "Muito Bonito", rating: 20)
+
+Topics.link_topic_and_comment(Topics.get_topic!(1), Comments.get_comment!(1))
 
 for a <- Repo.all(Topic) do
   for b <- Repo.all(Theme) do

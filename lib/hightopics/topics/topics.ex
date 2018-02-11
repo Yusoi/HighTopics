@@ -17,7 +17,7 @@ defmodule Hightopics.Topics do
 
   """
   def list_topics do
-    Repo.all(Topic)
+    Repo.preload(Repo.all(Topic),:comments)
   end
 
   @doc """
@@ -34,7 +34,7 @@ defmodule Hightopics.Topics do
       ** (Ecto.NoResultsError)
 
   """
-  def get_topic!(id), do: Repo.get!(Topic, id)
+  def get_topic!(id), do: Repo.preload(Repo.get!(Topic, id),:comments)
 
   @doc """
   Creates a topic.

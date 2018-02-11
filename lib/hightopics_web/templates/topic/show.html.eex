@@ -8,3 +8,9 @@
     <strong>Rating:</strong>
     <%= @topic.rating %>
 </div>
+
+<div>
+  <%= for comment <- @topic.comments do %>
+    <%= render HightopicsWeb.CommentView, "show.html", comment: comment %>
+  <% end %>
+</div>

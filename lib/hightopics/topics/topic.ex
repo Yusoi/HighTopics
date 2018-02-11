@@ -9,6 +9,7 @@ defmodule Hightopics.Topics.Topic do
     field :name, :string
     field :rating, :integer
     many_to_many :themes, Hightopics.Themes.Theme, join_through: "themes_topics"
+    has_many :comments, Hightopics.Comments.Comment
     belongs_to :user, Hightopics.Users.User
 
     timestamps()

@@ -7,3 +7,7 @@
   </li>
 
 </ul>
+
+<div>
+  <%= link "Random Topic (Chosen Theme)", to: topic_path(@conn, :show, Hightopics.Themes.random_topic(@theme)), class: "randombutton"%>
+</div>
