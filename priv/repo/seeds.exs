@@ -62,9 +62,9 @@ Populate.add_topic! name: "Socrates", description: "Philosophy", rating: 10
 Populate.add_topic! name: "Pitagoras", description: "Philosophy", rating: 10
 Populate.add_topic! name: "Aristotoles", description: "Philosophy", rating: 10
 
-Populate.add_topic! name: "The Voice", description: "TV Show", rating: 10
-Populate.add_topic! name: "BGT", description: "TV Show", rating: 10
-Populate.add_topic! name: "Big Brother", description: "TV Show", rating: 10
+Populate.add_topic! name: "The Voice", description: "TV show", rating: 10
+Populate.add_topic! name: "BGT", description: "TV show", rating: 10
+Populate.add_topic! name: "Big Brother", description: "TV show", rating: 10
 
 Populate.add_topic! name: "How to make friends and influence people", description: "Book", rating: 10
 Populate.add_topic! name: "Harry Potter", description: "Book", rating: 10
@@ -121,18 +121,18 @@ end
 
 #Topics.link_topic_and_comment(Topics.get_topic!(1), Comments.get_comment!(1))
 
-#for a <- Repo.all(Topic) do
-#  for b <-  Enum.filter(Repo.all(Theme), fn(x)-> x.name == a.description end) do
-#   Topics.link_topic_and_theme(a,b)
-#  end
-#end
-#
-
-for a <- Repo.all(Topic) do
-  for b <- Repo.all(Theme) do
-    Topics.link_topic_and_theme(a,b)
+for a <- Repo.all(Theme) do
+  for b <-  Enum.filter(Repo.all(Topic), fn(x)-> a.name == x.description end) do
+   Topics.link_topic_and_theme(b,a)
   end
 end
+
+
+#for a <- Repo.all(Topic) do
+  #  for b <- Repo.all(Theme) do
+    #Topics.link_topic_and_theme(a,b)
+    # end
+  #end
 
 for {a,b} <- Enum.with_index(Repo.all(Topic)) do
   for x <- 0..7, do: Topics.link_topic_and_comment(a, Comments.get_comment!((x+1)+ (b*8)))
