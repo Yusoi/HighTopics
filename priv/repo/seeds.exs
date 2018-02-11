@@ -1,16 +1,3 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     Hightopics.Repo.insert!(%Hightopics.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
-
-
 alias Hightopics.Repo
 alias Hightopics.Themes
 alias Hightopics.Themes.Theme
@@ -18,8 +5,7 @@ alias Hightopics.Topics
 alias Hightopics.Topics.Topic
 alias Hightopics.Users
 alias Hightopics.Users.User
-alias Hightopics.Comments.Comment
-#alias Ecto.Changeset
+alias Hightopics.Comments
 
 Repo.delete_all(Theme)
 
@@ -49,23 +35,55 @@ defmodule Populate do
 end
 
 Repo.delete_all(User)
-Populate.add_user! username: "resende", email: "1@123.pt"
-Populate.add_user! username: "bertinho", email: "asdsad@qasd.pt"
+Populate.add_user! username: "Maria", email: "1@gmail.pt"
+Populate.add_user! username: "bertinho", email: "asdsad@protonmail.pt"
 
 Repo.delete_all(Topic)
-Populate.add_topic! name: "Last Shadow Puppets", description: "Banda inglesa", rating: 10
-Populate.add_topic! name: "Submarine", description: "Filme de 2011", rating: 10
+
+Populate.add_topic! name: "Last Shadow Puppets", description: "Banda Inglesa", rating: 10
+
+Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
+Populate.add_topic! name: "Politics", description: "2011 film", rating: 10
+Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
+Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
+Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
+Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
+Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
 
 Repo.delete_all(Theme)
-Populate.add_theme! name: "Musica", description: "A música é uma forma de arte que se constitui na combinação de vários sons e ritmos, seguindo uma pré-organização ao longo do tempo."
-Populate.add_theme! name: "Filme", description: "É um produto audiovisual finalizado, com uma certa duração, para ser exibido no cinema, na televisão ou em algum outro veículo"
+Populate.add_theme! name: "Music", description: "Music is a form of art; an expression of emotions through harmonic frequencies."
 
+Populate.add_theme! name: "Films", description: "a series of still images that when shown on a screen create an illusion of motion images."
 
+Populate.add_theme! name: "Politics", description: "The process of making decisions that apply to members of a group."
 
+Populate.add_theme! name: "Philosophy", description: "Philosophy is the study of general and fundamental problems concerning matters such as existence, knowledge, values, reason, mind, and language"
 
-Populate.add_comment!(content: "Muito Bonito", rating: 20)
+Populate.add_theme! name: "TV show", description: "A música é uma forma de arte que se constitui na combinação de vários sons e ritmos, seguindo uma pré-organização ao longo do tempo."
 
-Topics.link_topic_and_comment(Topics.get_topic!(1), Comments.get_comment!(1))
+Populate.add_theme! name: "Book", description: "Series of pages assembled for easy portability and reading, as well as the composition contained in it."
+
+Populate.add_theme! name: "Food", description: "Food is what people and animals eat"
+
+Populate.add_theme! name: "Sports", description: "All forms of competitive physical activity or games which, through casual or organised participation, aim to use, maintain or improve physical ability and skills while providing enjoyment to participants, and in some cases, entertainment for spectators"
+
+Populate.add_theme! name: "Current Events", description: "Information provided through many different media: word of mouth, printing, postal systems, broadcasting, electronic communication, and also on the testimony of observers and witnesses to events. It is also used as a platform to manufacture opinion for the population"
+
+Populate.add_theme! name: "Family", description: "Group of people affiliated either by consanguinity (by recognized birth), affinity (by marriage or other relationship), or co-residence "
+
+for a <-  Repo.all(Topic) do
+  Populate.add_comment!(content: "Pretty Beautiful", rating: 20)
+  Populate.add_comment!(content: "Things to do", rating: 20)
+  Populate.add_comment!(content: "WoW!", rating: 20)
+  Populate.add_comment!(content: "Cool", rating: 20)
+  Populate.add_comment!(content: "Fomented an incredible discussion!", rating: 20)
+  Populate.add_comment!(content: "Could not ask for better!", rating: 20)
+  Populate.add_comment!(content: "Without doubt a great topic and a great WebApp", rating: 20)
+  Populate.add_comment!(content: "Incredible !!!!!!!", rating: 20)
+end
+
+#Topics.link_topic_and_comment(Topics.get_topic!(1), Comments.get_comment!(1))
+
 
 for a <- Repo.all(Topic) do
   for b <- Repo.all(Theme) do
@@ -73,6 +91,9 @@ for a <- Repo.all(Topic) do
   end
 end
 
+for {a,b} <- Enum.with_index(Repo.all(Topic)) do
+  for x <- 0..7, do: Topics.link_topic_and_comment(a, Comments.get_comment!((x+1)+ (b*8)))
+end
 #IO.puts Themes.random.name
 
 #for a <- Repo.all(Topic) do
