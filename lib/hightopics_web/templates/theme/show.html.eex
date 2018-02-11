@@ -1,18 +1,9 @@
 <h2 class="titleGroup"><%=@theme.name%></h2>
 
-<ul>
+<ul style=" padding:0px!important; box-sizing:content-box!important;">
 
-  <li>
-    <strong>Name:</strong>
-    <%= @theme.name %>
-  </li>
-
-  <li>
-    <strong>Description:</strong>
+  <li style="font-size: 20px !important; color: white;">
     <%= @theme.description %>
   </li>
 
 </ul>
-
-<span><%= link "Edit", to: theme_path(@conn, :edit, @theme) %></span>
-<span><%= link "Back", to: theme_path(@conn, :index) %></span>

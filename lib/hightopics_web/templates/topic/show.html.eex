@@ -1,23 +1,10 @@
 <h2 class="titleGroup"><%=@topic.name%></h2>
 
-<ul>
-
-  <li>
-    <strong>Name:</strong>
-    <%= @topic.name %>
-  </li>
-
-  <li>
-    <strong>Description:</strong>
+<div style="color:white; font-size:20px; padding: 20px;">
     <%= @topic.description %>
-  </li>
+</div>
 
-  <li>
+<div style="color:white; font-size:20px; padding: 20px;">
     <strong>Rating:</strong>
     <%= @topic.rating %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: topic_path(@conn, :edit, @topic) %></span>
-<span><%= link "Back", to: topic_path(@conn, :index) %></span>
+</div>
