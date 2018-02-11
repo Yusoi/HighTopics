@@ -1,13 +1,13 @@
 <h2 class="titleGroup"><%=@theme.name%></h2>
 
-<ul style=" padding:0px!important; box-sizing:content-box!important;">
+<div class="description">
+  <div style="font-size:25px;">Description:</div>
+  <div style="font-size:20px;"><%= @theme.description %></div>
+</div>
 
-  <li style="font-size: 20px !important; color: white;">
-    <%= @theme.description %>
-  </li>
-
-</ul>
 
 <div>
   <%= link "Random Topic (Chosen Theme)", to: topic_path(@conn, :show, Hightopics.Themes.random_topic(@theme)), class: "randombutton"%>
 </div>
+
+

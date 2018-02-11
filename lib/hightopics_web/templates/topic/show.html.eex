@@ -1,7 +1,10 @@
 <h2 class="titleGroup"><%=@topic.name%></h2>
 
-<div style="color:white; font-size:20px; padding: 20px;">
-    <%= @topic.description %>
+
+
+<div class="description">
+    <div style="font-size:25px; font-weight:700">Description:</div>
+    <div style="font-size:20px;"><%= @topic.description %></div>
 </div>
 
 <div style="color:white; font-size:20px; padding: 20px;">
@@ -9,7 +12,13 @@
     <%= @topic.rating %>
 </div>
 
-<div>
+<div style="font-size:25px; font-weight:700;" class="description">
+  Comments:
+</div>
+
+
+
+<div style="float:left; font-size:20!important; text-align:center; display:border-box">
   <%= for comment <- @topic.comments do %>
     <%= render HightopicsWeb.CommentView, "show.html", comment: comment %>
   <% end %>
