@@ -18,20 +18,20 @@
     <nav>
     <ul class="navbar-ht">
       <li><a href="/" class="lbuttons-ht1">High Topics</a></li>
-      <li><a href="/" class="lbuttons-ht">Register</a></li>
-      <li><a href="/" class="lbuttons-ht">Login</a></li>
-      <li><a href="/topics" class="lbuttons-ht">Themes</a></li>
-      <li><a href="/" class="lbuttons-ht">Home</a></li>      
+      <li><a href="/login" class="lbuttons-ht">Login</a></li>
+      <li><a href="/statistics" class="lbuttons-ht">Statistics</a></li>
+      <li><a href="/topics" class="lbuttons-ht">Topics</a></li>
+      <li><a href="/themes" class="lbuttons-ht">Themes</a></li>     
     </ul>
 
     <select class="navbar-ht"> 
       <option value="" selected="selected">Select</option> 
 
       <option value="/" class="lbuttons-ht1">High Topics</option>
-      <option value="/" class="lbuttons-ht">Home</option> 
-      <option value="/topics" class="lbuttons-ht">Themes</option>
-      <option value="/" class="lbuttons-ht">Login</option>
-      <option value="/" class="lbuttons-ht">Register</option>
+      <option value="/themes" class="lbuttons-ht">Themes</option>
+      <li><a href="/topics" class="lbuttons-ht">Topics</a></li>
+      <li><a href="/statistics" class="lbuttons-ht">Statistics</a></li>
+      <option value="/login" class="lbuttons-ht">Login</option>
     </select>
     </nav>
     
