@@ -18,7 +18,7 @@
 
 
 
-<div style="float:left; font-size:20!important; text-align:center; display:border-box">
+<div style="text-align:center;">
   <%= for comment <- @topic.comments do %>
     <%= render HightopicsWeb.CommentView, "show.html", comment: comment %>
   <% end %>

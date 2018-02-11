@@ -215,4 +215,6 @@ nav select {
     border: 5px solid #1D3E59;
     background:#FAFAFA;
     font-size: 15px;
+    display: inline-block;
+    text-align:center;
 }
