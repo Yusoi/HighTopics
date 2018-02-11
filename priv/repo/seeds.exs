@@ -47,11 +47,11 @@ Populate.add_topic! name: "Last Shadow Puppets", description: "Music", rating: 1
 
 Populate.add_topic! name: "Submarine", description: "Films", rating: 10
 Populate.add_topic! name: "Politics", description: "Films", rating: 10
-Populate.add_topic! name: "Submarine", description: "Films", rating: 10
-Populate.add_topic! name: "Submarine", description: "Films", rating: 10
-Populate.add_topic! name: "Submarine", description: "Films", rating: 10
-Populate.add_topic! name: "Submarine", description: "Films", rating: 10
-Populate.add_topic! name: "Submarine", description: "Films", rating: 10
+Populate.add_topic! name: "Saw", description: "Films", rating: 10
+Populate.add_topic! name: "HarryPoter", description: "Films", rating: 10
+Populate.add_topic! name: "Hobbit", description: "Films", rating: 10
+Populate.add_topic! name: "SpiderMan", description: "Films", rating: 10
+Populate.add_topic! name: "StarWars", description: "Films", rating: 10
 
 Populate.add_topic! name: "PSD", description: "Politics", rating: 10
 Populate.add_topic! name: "PS", description: "Politics", rating: 10
