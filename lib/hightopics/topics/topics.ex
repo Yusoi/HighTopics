@@ -9,9 +9,7 @@ defmodule Hightopics.Topics do
   alias Hightopics.Topics.Topic
 
   @doc """
-  Returns the list of topics.
-
-  ## Examples
+  Returns the list of topics.  ## Examples
 
       iex> list_topics()
       [%Topic{}, ...]
@@ -101,4 +99,17 @@ defmodule Hightopics.Topics do
   def change_topic(%Topic{} = topic) do
     Topic.changeset(topic, %{})
   end
+
+
+  def link_topic_and_theme(topic = %Topic{}, theme = %Theme{}) do
+      topic = Repo.preload(topic, :themes)
+      themes = topic.themes ++ [theme]
+                  |> Enum.map(&Ecto.Changeset.change/1)
+
+      topic
+      |> Ecto.Changeset.change
+      |> Ecto.Changeset.put_assoc(:themes, themes)
+      |> Repo.update
+  end
+
 end

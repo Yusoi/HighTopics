@@ -101,4 +101,14 @@ defmodule Hightopics.Themes do
   def change_theme(%Theme{} = theme) do
     Theme.changeset(theme, %{})
   end
+
+  def set_theme(topic) do
+    for u <- list_themes() do
+      u
+      |> Repo.preload(:topics)
+      |> Changeset.change
+      |> Changeset.put_assoc(:topics,[topic])
+      |> Repo.update!
+end
+    end
 end
