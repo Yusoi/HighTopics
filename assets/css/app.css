@@ -25,7 +25,6 @@ nav ul{
     text-align:center !important;
     position:fixed; 
     width:100% !important;
-
 }
 
 li{
@@ -64,6 +63,12 @@ nav select {
     color:#1D2F3A;
     text-decoration:none;
     border-bottom-width:5px!important;
+    -webkit-transition: color 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: color 0.5s;
+}
+
+.lbuttons-ht1:hover{
+    color:#60859b!important;
 }
 
 .lbuttons-ht{
@@ -76,6 +81,8 @@ nav select {
     font-size: 25px;
     font-weight: 500;
     color:#1D2F3A!important;
+    -webkit-transition: color 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: color 0.5s;
 
     text-decoration:none;
 }
@@ -84,6 +91,10 @@ nav select {
     color:#1D2F3A;
     text-decoration:none;
     border-bottom-width:5px!important;
+}
+
+.lbuttons-ht:hover{
+    color:#60859b!important;
 }
 
 
@@ -106,6 +117,7 @@ nav select {
     width:100%;
     padding:50px;
     float:top !important;
+    letter-spacing:0px!important;
     text-align:center;
 }
 
@@ -115,14 +127,22 @@ nav select {
         font-size: 24px;
         cursor: pointer;
         text-align: center;
-        text-decoration: none;
         outline: none;
-        color: #FAFAFA;
         background-color: #1D3E59;
         border: none;
         border-radius: 15px;
         box-shadow: 0 9px #051726;
         margin: 30px;
+}
+
+.randombutton, .randombutton:link, .randombutton:hover, .randombutton:active{
+    text-decoration: none!important;
+    color: #FAFAFA!important;
+}
+
+.randombuttontext, .randombuttontext:link , .randombuttontext:hover, .randombuttontext:active{
+    text-decoration: none!important;
+    color: #FAFAFA!important;
 }
 
 .randombutton:hover {
@@ -149,4 +169,21 @@ nav select {
     color:#FAFAFA;
     font-size:40px;
     font-weight: 700;
+}
+
+.titleGroup{
+    font-size: 40px;
+    color:#FAFAFA; 
+    font-weight: 700;
+}
+
+.tableAttributes{
+    font-size: 25px;
+    color:#FAFAFA;
+}
+
+.tableElements{
+    font-size: 15px;
+    color:#FAFAFA;
+    text-align:left;
 }

@@ -7,3 +7,8 @@
     <button class="randombutton">Random Topic</button>
     <button class="randombutton">Random Topic (Chosen Theme)</button>
 </div>
+
+<div class="buttons">
+    <%= link "Submit a Theme", to: theme_path(@conn, :new), class: "randombutton"%>
+    <%= link "Submit a Topic", to: topic_path(@conn, :new), class: "randombutton"%>
+</div>
