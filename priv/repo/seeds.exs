@@ -39,16 +39,53 @@ Populate.add_user! username: "Maria", email: "1@gmail.pt"
 Populate.add_user! username: "bertinho", email: "asdsad@protonmail.pt"
 
 Repo.delete_all(Topic)
+Populate.add_topic! name: "Rock", description: "Music", rating: 10
+Populate.add_topic! name: "Pop", description: "Music", rating: 10
+Populate.add_topic! name: "Indie", description: "Music", rating: 10
+Populate.add_topic! name: "Funk", description: "Music", rating: 10
+Populate.add_topic! name: "Last Shadow Puppets", description: "Music", rating: 10
 
-Populate.add_topic! name: "Last Shadow Puppets", description: "Banda Inglesa", rating: 10
+Populate.add_topic! name: "Submarine", description: "Films", rating: 10
+Populate.add_topic! name: "Politics", description: "Films", rating: 10
+Populate.add_topic! name: "Submarine", description: "Films", rating: 10
+Populate.add_topic! name: "Submarine", description: "Films", rating: 10
+Populate.add_topic! name: "Submarine", description: "Films", rating: 10
+Populate.add_topic! name: "Submarine", description: "Films", rating: 10
+Populate.add_topic! name: "Submarine", description: "Films", rating: 10
 
-Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
-Populate.add_topic! name: "Politics", description: "2011 film", rating: 10
-Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
-Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
-Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
-Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
-Populate.add_topic! name: "Submarine", description: "2011 film", rating: 10
+Populate.add_topic! name: "PSD", description: "Politics", rating: 10
+Populate.add_topic! name: "PS", description: "Politics", rating: 10
+Populate.add_topic! name: "Bloco de esquerda", description: "Politics", rating: 10
+
+Populate.add_topic! name: "Aristotoles", description: "Philosophy", rating: 10
+Populate.add_topic! name: "Socrates", description: "Philosophy", rating: 10
+Populate.add_topic! name: "Pitagoras", description: "Philosophy", rating: 10
+Populate.add_topic! name: "Aristotoles", description: "Philosophy", rating: 10
+
+Populate.add_topic! name: "The Voice", description: "TV Show", rating: 10
+Populate.add_topic! name: "BGT", description: "TV Show", rating: 10
+Populate.add_topic! name: "Big Brother", description: "TV Show", rating: 10
+
+Populate.add_topic! name: "How to make friends and influence people", description: "Book", rating: 10
+Populate.add_topic! name: "Harry Potter", description: "Book", rating: 10
+Populate.add_topic! name: "Eragon", description: "Book", rating: 10
+
+Populate.add_topic! name: "Spaghetti", description: "Food", rating: 10
+Populate.add_topic! name: "Hamburger", description: "Food", rating: 10
+Populate.add_topic! name: "Pizza", description: "Food", rating: 10
+
+Populate.add_topic! name: "Football", description: "Sports", rating: 10
+Populate.add_topic! name: "Basketball", description: "Sports", rating: 10
+Populate.add_topic! name: "Volleyball", description: "Sports", rating: 10
+Populate.add_topic! name: "Handball", description: "Sports", rating: 10
+
+Populate.add_topic! name: "SEI", description: "Current Events", rating: 10
+Populate.add_topic! name: "Hacktivate", description: "Current Events", rating: 10
+Populate.add_topic! name: "WebSummit", description: "Current Events", rating: 10
+
+Populate.add_topic! name: "Son", description: "Family", rating: 10
+Populate.add_topic! name: "Brother", description: "Family", rating: 10
+Populate.add_topic! name: "Sister", description: "Family", rating: 10
 
 Repo.delete_all(Theme)
 Populate.add_theme! name: "Music", description: "Music is a form of art; an expression of emotions through harmonic frequencies."
@@ -84,6 +121,12 @@ end
 
 #Topics.link_topic_and_comment(Topics.get_topic!(1), Comments.get_comment!(1))
 
+#for a <- Repo.all(Topic) do
+#  for b <-  Enum.filter(Repo.all(Theme), fn(x)-> x.name == a.description end) do
+#   Topics.link_topic_and_theme(a,b)
+#  end
+#end
+#
 
 for a <- Repo.all(Topic) do
   for b <- Repo.all(Theme) do
@@ -94,6 +137,10 @@ end
 for {a,b} <- Enum.with_index(Repo.all(Topic)) do
   for x <- 0..7, do: Topics.link_topic_and_comment(a, Comments.get_comment!((x+1)+ (b*8)))
 end
+
+#for {a,b} <- Enum.with_index(Repo.all(Topic)) do
+#  for x <- 0..7, do: Topics.link_topic_and_comment(a, Comments.get_comment!((x+1)+ (b*8)))
+#end
 #IO.puts Themes.random.name
 
 #for a <- Repo.all(Topic) do
